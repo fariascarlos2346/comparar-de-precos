@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
     <title>Dev Compara</title>
 </head>
 <body>
@@ -11,10 +12,11 @@
         <h1>Dev Compara Preço</h1>
         <form class="search-form">
             <input placeholder="Digite o nome do Produto" class="product-input">
-            <button>Buscar</button>
+            <button type="submit">Buscar</button>
         </form>
         <div class="product-list"></div>
         <canvas class="price-chart"></canvas>
     </main>
 </body>
+<script src="./scripts.js"></script>
 </html>
