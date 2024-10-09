@@ -28,7 +28,7 @@ searchForm.addEventListener('submit', async function(event){
 function displayItems(products){
     productList.innerHTML = products.map( product => `
             <div class="product-card">
-                <img src="${product.thumbnail.replace(/\w\.jpg/gi, 'w.jpg')}" alt="${product.title}">
+                <img src="${product.thumbnail.replace(/\w\.jpg/gi, 'I.jpg')}" alt="${product.title}">
                 <h3>${product.title}</h3>
                 <p class="product-price">${product.price.toLocaleString('pt-br', {style: "currency", currency: "BRL"})}</p>
                 <p class="product-store">Loja: ${product.seller.nickname}</p>
@@ -37,14 +37,14 @@ function displayItems(products){
     ).join('')
 }
 
-function updatePriceChart(){
+function updatePriceChart(products){
     const ctx = priceChat.getContext('2d')
 
     if(myChart){
         myChart.destroy()
     }
 
-    myChart = new CharacterData(ctx, {
+    myChart = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: products.map( product => product.title.substring(0, 20) + '...'),
